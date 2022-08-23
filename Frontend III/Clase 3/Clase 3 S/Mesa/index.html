@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicando JSX</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style></style>
+
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+
+        const listaMenus= [ "Home", "About", "Career", "Education" ]; const listExperiencia=[ "Piratas 1", "Piratas 2", "Piratas 3"]; const listEducacion=[ "Universidad Arts", "Universidad UCL"]; function Header(props) { const elementos = props.lista.map((itemMenu)=>
+        <li><a href="">{itemMenu}</a></li>); const content =
+        <header>
+            <ul>
+                {elementos}
+            </ul>
+        </header>
+        return content; }; function Main(props) { const content =
+        <main>
+            <div>
+                <Foto url="https://upload.wikimedia.org/wikipedia/commons/2/21/Johnny_Depp_2020.jpg" alt="Jhonny deep" />
+            </div>
+            <div>
+                <Informacion name="Jhonny" lastname="Deep" age="30" nacionality="EEUU" bio="actor de cine" listExp={listExperiencia} listEdu={listEducacion} />
+
+            </div>
+        </main>
+        return content; }; function Footer(props) { const content =
+        <footer>Grupo 6</footer>
+        return content; }; const faltantes= [ "Gaseosas", "Agua", "Vino" ]; function Foto(props) { const content =
+        <div className="foto">
+            <img src={props.url} alt={props.alt} />
+        </div>; return content; } function Informacion(props) { const listExp = props.listExp.map((exp)=>
+        <li>{exp}</li>); const listEdu = props.listEdu.map((edu)=>
+        <li>{edu}</li>); const content =
+        <div className="info">
+            <p>Nombre: {props.name}</p>
+            <p>Apellido: {props.lastname}</p>
+            <p>Edad: {props.age}</p>
+            <p>Nacionalidad: {props.nacionality}</p>
+            <p>Experiencia:
+                <ul>
+                    {listExp}
+                </ul>
+
+            </p>
+            <p>Educacion:
+                <ul>
+                    {listEdu}
+                </ul>
+
+            </p>
+            <p>Biografia: {props.bio}</p>
+        </div>; return content; } ReactDOM.render(
+        <div>
+            <Header lista={listaMenus}/>
+            <Main/>
+            <Footer/>
+        </div>, document.getElementById("root") )
+
+    </script>
+</body>
+
+</html>

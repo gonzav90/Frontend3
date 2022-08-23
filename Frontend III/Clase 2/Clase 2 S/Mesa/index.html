@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesa 3 - Clase 2</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+      const listas = (
+        <div>
+          <h1>Lista de Productos en stock:</h1>
+          <ul>
+            <li>Manzana</li>
+            <li>Pera</li>
+            <li>Naranja</li>
+            <li>Banana</li>
+            <li>Kiwi</li>
+          </ul>
+          <h2>Productos en falta:</h2>
+          <ul>
+            <li>Durazno</li>
+            <li>Cereza</li>
+            <li>Anana</li>
+          </ul>
+        </div>
+      );
+      ReactDOM.render(listas,document.getElementById("root"));
+    </script>
+  </body>
+</html>
